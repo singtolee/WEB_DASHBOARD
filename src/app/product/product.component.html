@@ -1,0 +1,57 @@
+<! first col>
+<div class="col-lg-4">
+  <form role="form" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+    <fieldset>
+      <label for="sel1">Select Category:</label>
+      <select class="form-control" id="sel1">
+        <option *ngFor="let item of cates | async">{{item.$value}}</option>
+      </select>
+      <label for="sel1">Select Suppler:</label>
+      <select class="form-control" id="sel1">
+        <option *ngFor="let sup of supplers | async">{{sup.supplerName}} {{sup.$key}}</option>
+      </select>
+      <label for="sel1">Product ID:</label>
+      <div class="form-group">
+          <input autofocus class="form-control" type="text" placeholder="ID" (ngModel)="prdid" name="prdid" required>
+      </div>
+      <label for="sel1">Product Name:</label>
+      <div class="form-group">
+          <input type="text" placeholder="Name" (ngModel)="prdname" name="prdname" class="form-control" required>
+      </div>
+      <label for="sel1">Product Description:</label>
+      <div class="form-group">
+          <textarea rows="4" cols="50" type="text" placeholder="Product Description" (ngModel)="prddes" name="prddes" class="form-control" required></textarea>
+      </div>
+      <label for="sel1">Product Package Info:</label>
+      <div class="form-group">
+          <input type="text" placeholder="Package info" (ngModel)="prdpkinfo" name="prdpkinfo" class="form-control" required>
+      </div>
+      <label for="sel1">Refundable or not?</label>
+      <div class="radio">
+        <label><input type="radio" name="prdref">Refundable</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="prdref">Non refundable</label>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<! second col>
+<div class="col-lg-4">
+  <label for="sel1">Product Color or Size:</label>
+  <div class="form-group">
+      <input type="text" placeholder="Color or Size" (ngModel)="prdcs" name="prdcs" class="form-control" required>
+  </div>
+  <label for="sel1">Product Quantity:</label>
+  <div class="form-group">
+      <input type="text" placeholder="Quantity" (ngModel)="prdqty" name="prdqty" class="form-control" required>
+  </div>
+  <label for="sel1">Product Image:</label>
+  <div class="form-group">
+      <input type="file" required>
+  </div>
+
+</div>
+<! third col>
+<div class="col-lg-4">
+</div>

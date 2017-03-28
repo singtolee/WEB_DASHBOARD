@@ -1,8 +1,23 @@
-<div class="form-container" id="toolbar">
-    <header [@fallIn]="state">
-      <button (click)="logout()" class="basic-btn">Logout</button>
-    </header>
-    <div id="page" [@moveInLeft]="state">
-      <h2>Hey {{ name.auth.displayName }}!</h2>
+<div id="wrapper">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/dashboard">Dashhboard</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/dashboard/product">Products</a></li>
+      <li><a routerLink="/dashboard">Supplers</a></li>
+      <li><a routerLink="/dashboard">Orders</a></li>
+      <li><a routerLink="/dashboard">Addresses</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="/login" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Right Aligned Navbar</h3>
+  <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
+</div>
 </div>
